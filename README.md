@@ -1,4 +1,4 @@
-# Letter Website
+#  Online Letter Design Template
 
 A dark, minimalist website with a music player and a simple fade-in animation.
 
