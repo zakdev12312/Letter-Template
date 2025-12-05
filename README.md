@@ -20,7 +20,7 @@ A minimal, retro-styled webpage with a custom HTML5 audio player and terminal-st
 
 2. **Customize the letter**: Open `script.js` and modify:
    - `CONFIG.recipientName`: Change 'friend' to the recipient's name
-   - `letterText`: Replace with your own letter content (keep it lowercase)
+   - `letterText`: Replace with your own letter content (keep it lowercase for most emotionality)
    - `CONFIG.greetingSpeed`: Adjust typing speed for greeting (default: 100ms)
    - `CONFIG.letterSpeed`: Adjust typing speed for letter (default: 30ms)
 
@@ -82,3 +82,4 @@ Open source - feel free to use and modify as needed.
 - Audio file must be in MP3 format (or update the source type)
 - Typing animation triggers on scroll or after 2 seconds
 - Mobile-optimized with responsive breakpoints at 768px and 480px
+
