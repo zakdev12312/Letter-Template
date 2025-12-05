@@ -1,4 +1,4 @@
-# Letter Template
+# Onine Letter Design Template
 
 A minimal, retro-styled webpage with a custom HTML5 audio player and terminal-style letter display.
 
