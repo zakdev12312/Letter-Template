@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #0a0a0a;
+    color: #00ff00;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Audio Player Styles */
+.audio-container {
+    position: sticky;
+    top: 0;
+    background: #1a1a1a;
+    padding: 20px;
+    border-bottom: 2px solid #333;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.audio-player {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    background: #00ff00;
+    color: #000;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.control-btn:hover {
+    background: #00cc00;
+    transform: scale(1.05);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+.progress-container {
+    flex: 1;
+    position: relative;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    background: #00ff00;
+    width: 0%;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+#progressSlider {
+    width: 100%;
+    height: 4px;
+    background: #333;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+#progressSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #00ff00;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+#progressSlider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #00ff00;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.time-display {
+    color: #00ff00;
+    font-size: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Terminal Styles */
+.terminal-container {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.terminal {
+    background: #1e1e1e;
+    border: 2px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 255, 0, 0.1);
+}
+
+.terminal-header {
+    background: #2d2d2d;
+    padding: 12px 20px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.terminal-header::before {
+    content: '';
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-header::before {
+    content: '● ● ●';
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.terminal-title {
+    color: #888;
+    font-size: 13px;
+}
+
+.terminal-body {
+    padding: 30px;
+    min-height: 400px;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #00ff00;
+    position: relative;
+}
+
+.greeting-line {
+    margin-bottom: 20px;
+    font-size: 18px;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.letter-content {
+    opacity: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.letter-content.visible {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.cursor {
+    display: inline-block;
+    color: #00ff00;
+    animation: blink 0.8s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .audio-container {
+        padding: 15px;
+    }
+
+    .audio-player {
+        gap: 10px;
+    }
+
+    .control-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .time-display {
+        font-size: 12px;
+        width: 100%;
+        text-align: center;
+        order: 3;
+    }
+
+    .progress-container {
+        order: 2;
+        min-width: 150px;
+    }
+
+    .terminal-container {
+        padding: 20px 10px;
+    }
+
+    .terminal-body {
+        padding: 20px;
+        font-size: 14px;
+        min-height: 300px;
+    }
+
+    .greeting-line {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-body {
+        padding: 15px;
+        font-size: 13px;
+    }
+
+    .greeting-line {
+        font-size: 15px;
+    }
+}
